@@ -15,10 +15,11 @@ const Navigation = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Explore Art", href: "/explore-art" },
-    { name: "Culture Events", href: "/culture-events" },
-    { name: "Virtual Exhibitions", href: "/virtual-exhibitions" },
+    // { name: "Explore Art", href: "/explore-art" },
+    // { name: "Culture Events", href: "/culture-events" },
+    // { name: "Virtual Exhibitions", href: "/virtual-exhibitions" },
     { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const socialLinks = [
@@ -34,8 +35,8 @@ const Navigation = () => {
       <div className="container mx-auto flex items-center justify-between px-6 py-4 md:px-12">
         {/* Logo Section */}
         <Link href="/">
-          <span className="text-white text-3xl font-bold tracking-wide">
-            Art Infinite World VR
+          <span className="text-white text-3xl font-bold tracking-wider hover:scale-105 transition-transform">
+            Era Explore
           </span>
         </Link>
 
@@ -56,7 +57,7 @@ const Navigation = () => {
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href}>
               <span
-                className="text-2xl md:text-lg font-medium text-gray-300 hover:text-white transition-colors duration-300"
+                className="text-2xl md:text-lg font-medium text-gray-300 hover:text-white hover:underline transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}

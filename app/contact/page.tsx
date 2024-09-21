@@ -9,16 +9,17 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add form submission logic here
     console.log("Form submitted:", formData);
     alert("Thank you for your message!");
   };
@@ -27,11 +28,13 @@ const Contact = () => {
     <main className="bg-gray-900 text-gray-300 min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[40vh] bg-[url('/images/contact-hero.jpg')] bg-cover bg-center flex items-center justify-center">
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-bold text-white">Get in Touch</h1>
-          <p className="mt-4 text-xl text-gray-300 max-w-lg mx-auto">
-            We'd love to hear from you! Reach out to us for any inquiries or
+          <h1 className="text-6xl font-extrabold text-white drop-shadow-lg">
+            Get in Touch
+          </h1>
+          <p className="mt-4 text-lg text-gray-300 max-w-lg mx-auto">
+            We’d love to hear from you! Reach out for any inquiries or
             collaborations.
           </p>
         </div>
@@ -40,18 +43,18 @@ const Contact = () => {
       {/* Contact Form Section */}
       <section className="py-16 bg-gray-800">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
-          <h2 className="text-3xl font-bold text-white text-center">
+          <h2 className="text-4xl font-bold text-white text-center">
             Contact Us
           </h2>
           <div className="mt-8 flex flex-col lg:flex-row lg:space-x-16">
             {/* Contact Information */}
             <div className="lg:w-1/2 space-y-6">
-              <h3 className="text-2xl font-semibold text-white">
+              <h3 className="text-3xl font-semibold text-white">
                 Our Contact Details
               </h3>
               <p className="text-gray-400">
                 If you have any questions or need further information, please
-                feel free to contact us.
+                feel free to reach out.
               </p>
               <div className="text-gray-400 space-y-4">
                 <div>
@@ -80,7 +83,7 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="mt-1 p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 p-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -94,7 +97,7 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="mt-1 p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 p-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -107,7 +110,7 @@ const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    className="mt-1 p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 p-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -115,7 +118,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full p-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                  className="w-full p-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
                 >
                   Send Message
                 </button>
@@ -128,7 +131,7 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
-          <h2 className="text-3xl font-bold text-white text-center mb-10">
+          <h2 className="text-4xl font-bold text-white text-center mb-10">
             Our Location
           </h2>
           {/* Embedded Google Map */}
@@ -139,6 +142,7 @@ const Contact = () => {
               height="100%"
               loading="lazy"
               title="Our Location"
+              className="border-0"
             ></iframe>
           </div>
         </div>

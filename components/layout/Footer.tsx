@@ -23,11 +23,23 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaFacebookF />, href: "https://www.facebook.com" },
-    { icon: <FaTwitter />, href: "https://www.twitter.com" },
-    { icon: <FaInstagram />, href: "https://www.instagram.com" },
-    { icon: <FaLinkedinIn />, href: "https://www.linkedin.com" },
-    { icon: <FaYoutube />, href: "https://www.youtube.com" },
+    {
+      icon: <FaFacebookF />,
+      href: "https://www.facebook.com",
+      label: "Facebook",
+    },
+    { icon: <FaTwitter />, href: "https://www.twitter.com", label: "Twitter" },
+    {
+      icon: <FaInstagram />,
+      href: "https://www.instagram.com",
+      label: "Instagram",
+    },
+    {
+      icon: <FaLinkedinIn />,
+      href: "https://www.linkedin.com",
+      label: "LinkedIn",
+    },
+    { icon: <FaYoutube />, href: "https://www.youtube.com", label: "YouTube" },
   ];
 
   return (
@@ -37,15 +49,21 @@ const Footer = () => {
           {/* Platform Info Section */}
           <div>
             <h3 className="text-white text-xl font-semibold mb-4">
-              Art Infinite World VR
+              Welcome to Era Explore
             </h3>
             <p className="mb-4">
-              Discover a new dimension of art and culture through immersive
-              virtual reality experiences.
+              We are revolutionizing how the world experiences and engages with
+              our country’s rich and diverse legacy. With our mission to{" "}
+              <em>
+                Preserve history, culture, and heritage through immersive
+                experiences
+              </em>
+              , we empower people to connect with the past in ways never before
+              possible.
             </p>
             <p className="text-gray-400">
-              &copy; {new Date().getFullYear()} Art.InfiniteWorldVR.com. All
-              rights reserved.
+              &copy; {new Date().getFullYear()} EraExplore.com. All rights
+              reserved.
             </p>
           </div>
 
@@ -58,7 +76,9 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <li key={link.name} className="mb-2">
                   <Link href={link.href}>
-                    <span className="hover:text-white">{link.name}</span>
+                    <span className="hover:text-white transition-colors duration-300 cursor-pointer">
+                      {link.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -70,14 +90,18 @@ const Footer = () => {
             <h3 className="text-white text-xl font-semibold mb-4">
               Contact Us
             </h3>
-            <ul>
-              {contactDetails.map((contact) => (
-                <li key={contact.type} className="mb-2">
-                  {contact.type}:{" "}
-                  <span className="hover:text-white">{contact.value}</span>
-                </li>
-              ))}
-            </ul>
+            <address className="not-italic">
+              <ul>
+                {contactDetails.map((contact) => (
+                  <li key={contact.type} className="mb-2">
+                    {contact.type}:{" "}
+                    <span className="hover:text-white transition-colors duration-300">
+                      {contact.value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </address>
           </div>
 
           {/* Social Media Section */}
@@ -90,7 +114,8 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white text-gray-400 text-xl"
+                  aria-label={social.label}
+                  className="hover:text-white text-gray-400 text-xl transition-transform transform hover:scale-110"
                 >
                   {social.icon}
                 </a>
@@ -103,12 +128,12 @@ const Footer = () => {
         <div className="mt-8 text-center md:text-left">
           <hr className="border-gray-700 my-6" />
           <p className="text-gray-400">
-            Step into the world of virtual reality at{" "}
+            Step into the world of immersive culture at{" "}
             <a
-              href="https://art.infiniteworldvr.com"
-              className="hover:text-white"
+              href="https://eraexplore.com"
+              className="hover:text-white transition-colors duration-300"
             >
-              art.infiniteworldvr.com
+              eraexplore.com
             </a>
             .
           </p>
