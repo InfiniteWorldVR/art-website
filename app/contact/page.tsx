@@ -9,31 +9,29 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: any) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     alert("Thank you for your message!");
   };
 
   return (
-    <main className="bg-gray-900 text-gray-300 min-h-screen">
+    <main className="bg-background text-textColor min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[40vh] bg-[url('/images/contact-hero.jpg')] bg-cover bg-center flex items-center justify-center">
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <section className="relative h-[40vh] bg-[url('https://images.pexels.com/photos/207456/pexels-photo-207456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-90"></div>
         <div className="relative z-10 text-center">
-          <h1 className="text-6xl font-extrabold text-white drop-shadow-lg">
+          <h1 className="text-6xl font-extrabold text-dartText drop-shadow-lg">
             Get in Touch
           </h1>
-          <p className="mt-4 text-lg text-gray-300 max-w-lg mx-auto">
+          <p className="mt-4 text-lg text-dartText max-w-lg mx-auto">
             We’d love to hear from you! Reach out for any inquiries or
             collaborations.
           </p>
@@ -41,22 +39,22 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-gray-800">
+      <section className="py-16 bg-bgColor">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
-          <h2 className="text-4xl font-bold text-white text-center">
+          <h2 className="text-4xl font-bold text-textColor text-center">
             Contact Us
           </h2>
           <div className="mt-8 flex flex-col lg:flex-row lg:space-x-16">
             {/* Contact Information */}
             <div className="lg:w-1/2 space-y-6">
-              <h3 className="text-3xl font-semibold text-white">
+              <h3 className="text-3xl font-semibold text-textColor">
                 Our Contact Details
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-600">
                 If you have any questions or need further information, please
                 feel free to reach out.
               </p>
-              <div className="text-gray-400 space-y-4">
+              <div className="text-gray-600 space-y-4">
                 <div>
                   <h4 className="font-semibold">Address</h4>
                   <p>123 VR Art Avenue, Metropolis, VR 12345</p>
@@ -76,41 +74,41 @@ const Contact = () => {
             <div className="lg:w-1/2 mt-10 lg:mt-0">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="flex flex-col">
-                  <label htmlFor="name" className="text-gray-400">
+                  <label htmlFor="name" className="text-gray-600">
                     Your Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    className="mt-1 p-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                    className="mt-1 p-4 bg-gray-200 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition"
                     value={formData.name}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="email" className="text-gray-400">
+                  <label htmlFor="email" className="text-gray-600">
                     Your Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    className="mt-1 p-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                    className="mt-1 p-4 bg-gray-200 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition"
                     value={formData.email}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="message" className="text-gray-400">
+                  <label htmlFor="message" className="text-gray-600">
                     Your Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    className="mt-1 p-4 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                    className="mt-1 p-4 bg-gray-200 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition"
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -118,7 +116,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full p-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                  className="w-full p-4 bg-primary text-white font-semibold rounded-lg hover:bg-[#FFAA2C] transition"
                 >
                   Send Message
                 </button>

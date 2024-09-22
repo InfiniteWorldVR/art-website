@@ -17,7 +17,7 @@ const Footer = () => {
   ];
 
   const contactDetails = [
-    { type: "Email", value: "support@infiniteworldvr.com" },
+    { type: "Email", value: "support@eraexplore.com" },
     { type: "Phone", value: "+1 234 567 890" },
     { type: "Address", value: "123 VR Avenue, Virtual City, World" },
   ];
@@ -62,7 +62,7 @@ const Footer = () => {
               possible.
             </p>
             <p className="text-gray-400">
-              &copy; {new Date().getFullYear()} EraExplore.com. All rights
+              &copy; {new Date().getFullYear()} EraExplore.rw. All rights
               reserved.
             </p>
           </div>
@@ -133,7 +133,7 @@ const Footer = () => {
               href="https://eraexplore.com"
               className="hover:text-white transition-colors duration-300"
             >
-              eraexplore.com
+              eraexplore.rw
             </a>
             .
           </p>

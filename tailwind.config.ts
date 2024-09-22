@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#f3a712",
+        textColor: "#534d41",
+        dartText: "#f0cea0",
+        bgColor: "#fcfff7",
       },
     },
   },

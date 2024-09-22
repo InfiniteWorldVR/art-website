@@ -33,7 +33,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-serif`}
       >
         <Navigation />
-        {children}
+
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
