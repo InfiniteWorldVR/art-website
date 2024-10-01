@@ -6,6 +6,8 @@ import emailjs, { init } from "@emailjs/browser";
 const Contact = () => {
   init("user_xxxxxxxxxxxxxxxxxxx");
 
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,6 +23,7 @@ const Contact = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    setLoading(true);
 
     console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
 
@@ -33,14 +36,16 @@ const Contact = () => {
       )
       .then(
         (result) => {
+          setLoading(false);
           alert("Message Sent Successfully");
+          window.location.reload();
           console.log(result.text);
         },
         (error) => {
-          console.log(error.text);
+          setLoading(false);
+          alert("An error occurred, Please try again");
         }
       );
-    alert("Thank you for your message!");
   };
 
   return (
@@ -139,7 +144,7 @@ const Contact = () => {
                   type="submit"
                   className="w-full p-4 bg-primary text-white font-semibold rounded-lg hover:bg-[#FFAA2C] transition"
                 >
-                  Send Message
+                  {loading ? "Sending Message..." : "Send Message"}
                 </button>
               </form>
             </div>
