@@ -49,7 +49,7 @@ const Footer = () => {
           {/* Platform Info Section */}
           <div>
             <h3 className="text-white text-xl font-semibold mb-4">
-              Welcome to Era Explore
+              Welcome to Era Explore VR
             </h3>
             <p className="mb-4">
               We are revolutionizing how the world experiences and engages with
