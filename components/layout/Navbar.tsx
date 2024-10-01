@@ -19,7 +19,6 @@ const Navigation = () => {
     // { name: "Culture Events", href: "/culture-events" },
     // { name: "Virtual Exhibitions", href: "/virtual-exhibitions" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const socialLinks = [
@@ -36,7 +35,7 @@ const Navigation = () => {
         {/* Logo Section */}
         <Link href="/">
           <span className="text-white text-3xl font-bold tracking-wider hover:scale-105 transition-transform">
-            Era Explore
+            Era Explore VR
           </span>
         </Link>
 
@@ -66,7 +65,7 @@ const Navigation = () => {
           ))}
 
           {/* Social Links for Mobile */}
-          <div className="flex space-x-6 md:hidden">
+          {/* <div className="flex space-x-6 md:hidden">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
@@ -78,11 +77,11 @@ const Navigation = () => {
                 {social.icon}
               </a>
             ))}
-          </div>
+          </div> */}
         </nav>
 
         {/* Social Links for Desktop */}
-        <div className="hidden md:flex space-x-4">
+        {/* <div className="hidden md:flex space-x-4">
           {socialLinks.map((social, index) => (
             <a
               key={index}
@@ -94,6 +93,16 @@ const Navigation = () => {
               {social.icon}
             </a>
           ))}
+        </div> */}
+
+        <div>
+          {/*  contact us button */}
+
+          <Link href="/contact">
+            <span className="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-yellow-500 transition duration-300">
+              Contact Us
+            </span>
+          </Link>
         </div>
       </div>
     </header>

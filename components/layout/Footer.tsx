@@ -17,9 +17,9 @@ const Footer = () => {
   ];
 
   const contactDetails = [
-    { type: "Email", value: "support@eraexplore.com" },
-    { type: "Phone", value: "+1 234 567 890" },
-    { type: "Address", value: "123 VR Avenue, Virtual City, World" },
+    { type: "Email", value: "eraexploreltd@gmail.com" },
+    { type: "Phone", value: "+250789530369" },
+    { type: "Address", value: "1 KN 78 St, Kigali" },
   ];
 
   const socialLinks = [
@@ -105,7 +105,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media Section */}
-          <div>
+          {/* <div>
             <h3 className="text-white text-xl font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -121,7 +121,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Section */}

@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import emailjs, { init } from "@emailjs/browser";
 
 const Contact = () => {
+  init("user_xxxxxxxxxxxxxxxxxxx");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,7 +21,25 @@ const Contact = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
+        e.target,
+        process.env.NEXT_PUBLIC_USER_ID || ""
+      )
+      .then(
+        (result) => {
+          alert("Message Sent Successfully");
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     alert("Thank you for your message!");
   };
 
@@ -57,15 +78,15 @@ const Contact = () => {
               <div className="text-gray-600 space-y-4">
                 <div>
                   <h4 className="font-semibold">Address</h4>
-                  <p>123 VR Art Avenue, Metropolis, VR 12345</p>
+                  <p>1 KN 78 St, Kigali</p>
                 </div>
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p>+1 (555) 123-4567</p>
+                  <p>250789530369</p>
                 </div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p>contact@infiniteworldvr.com</p>
+                  <p>eraexploreltd@gmail.com</p>
                 </div>
               </div>
             </div>
